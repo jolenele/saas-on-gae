@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Upload image → Vision Labels</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Roboto, "Segoe UI", Arial; margin: 36px; }
+    .card { border:1px solid #eee; padding:20px; border-radius:8px; max-width:640px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    label { display:block; margin-bottom:8px; font-weight:600; }
+    input[type=file] { margin-bottom:12px; }
+    button { padding:8px 14px; border-radius:6px; border:0; background:#0366d6; color:white; cursor:pointer; }
+    .hint { color:#666; font-size:0.9rem; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Detect image labels (Google Cloud Vision)</h1>
+
+    <form id="uploadForm" method="post" action="/analyze" enctype="multipart/form-data">
+      <label for="image">Choose an image file</label>
+      <input id="image" name="image" type="file" accept="image/*" required />
+      <div>
+        <button type="submit">Upload & Analyze</button>
+      </div>
+      <div class="hint">Server will send back a page listing detected labels.</div>
+    </form>
+
+  </div>
+</body>
+</html>
